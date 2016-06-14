@@ -3,10 +3,19 @@
 <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
 for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
 mixpanel.init("e4369a8a409f66ace6eef58d9255bf79");</script><!-- end Mixpanel -->
+<script type="text/javascript">
+function rnd(start, end){
+    return Math.floor(Math.random() * (end - start) + start);
+}
+</script>
 </head>
 <body>
-aksldjfklasjdf
 
-<input type="button" value="test" onclick="mixpanel.track('aslkdjflkasjdf');"></input>
+<input type="button" value="idenfity as new user" onclick="mixpanel.identify(rnd(1, 100));"></input>
+<input type="button" value="浏览商品:数码" onclick="mixpanel.track('浏览商品', {'类型':'数码'});"></input>
+<input type="button" value="浏览商品:服装" onclick="mixpanel.track('浏览商品', {'类型':'服装'});"></input>
+<input type="button" value="加入购物车" onclick="mixpanel.track('加入购物车');"></input>
+<input type="button" value="提交订单" onclick="mixpanel.track('提交订单');"></input>
+<input type="button" value="支付订单" onclick="mixpanel.track('支付订单');"></input>
 </body>
 </html>
