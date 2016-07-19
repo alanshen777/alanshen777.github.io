@@ -20,7 +20,9 @@
 
 <body>
 
-  <button onclick="amplitude.logEvent('浏览商品');">浏览商品</button>
+  <button onclick="amplitude.logEvent('浏览商品', '价格':23332);">浏览商品</button>
+  <button onclick="amplitude.logEvent('浏览商品', '价格':11122);">浏览商品</button>
+  <button onclick="amplitude.logEvent('浏览商品', '价格':'aklsjdfkj');">浏览商品</button>
   <button onclick="amplitude.logEvent('加到购物车');">加到购物车</button>
   <button onclick="amplitude.logEvent('支付订单');">支付订单</button>
 
