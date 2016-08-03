@@ -5,8 +5,12 @@
 
  <script type="text/javascript">
  var authenticationSuccess = function() {
-   Trello.get('boards/JJVv7iOh/cards', function(msg){
-     console.log(msg);
+   Trello.get('lists/57550ffdda2131948a8d135d/cards', function(msg){
+     for (card in msg)
+     {
+       console.log(card);
+       console.log('------------------');
+     }
    });
  };
  var authenticationFailure = function() { console.log('Failed authentication'); };
@@ -21,9 +25,6 @@
   success: authenticationSuccess,
   error: authenticationFailure
   });
-
-
-
 
 
  </script>
