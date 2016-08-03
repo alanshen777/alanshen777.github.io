@@ -4,7 +4,11 @@
 <script src="https://api.trello.com/1/client.js?key=30a1813fec417bdf91eab023cf24d322"></script>
 
  <script type="text/javascript">
- var authenticationSuccess = function() { console.log('Successful authentication'); };
+ var authenticationSuccess = function() {
+   Trello.get('boards/4eea4ffc91e31d1746000046/cards', function(msg){
+     console.log(msg);
+   });
+ };
  var authenticationFailure = function() { console.log('Failed authentication'); };
 
  Trello.authorize({
@@ -17,6 +21,10 @@
   success: authenticationSuccess,
   error: authenticationFailure
   });
+
+
+
+
 
  </script>
 </head>
