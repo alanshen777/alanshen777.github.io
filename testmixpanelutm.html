@@ -10,6 +10,7 @@ function rnd(start, end){
 
 function setpeople()
 {
+  alert('asdfasdf');
   mixpanel.identify('222');
   mixpanel.people.set({
     "$email": "jsmith@example.com",    // only special properties need the $
@@ -24,7 +25,7 @@ function setpeople()
 </head>
 <body>
 
-<input type="button" value="idenfity as new user" onclick="setpeople()"></input>
+<input type="button" value="idenfity as new user" onclick="setpeople();"></input>
 <input type="button" value="浏览商品:数码" onclick="mixpanel.track('浏览商品', {'类型':'数码'});"></input>
 <input type="button" value="浏览商品:服装" onclick="mixpanel.track('浏览商品', {'类型':'服装'});"></input>
 <input type="button" value="加入购物车" onclick="mixpanel.track('加入购物车');"></input>
