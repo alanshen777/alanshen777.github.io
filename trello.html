@@ -4,12 +4,22 @@
 <script src="https://api.trello.com/1/client.js?key=30a1813fec417bdf91eab023cf24d322"></script>
 
  <script type="text/javascript">
+
+var getCardsOfList = function(listid)
+{
+  console.log(listid);
+  Trello.get('lists/' + listid.toString() + '/cards', function(cards){
+    for (var j=0; j<cards.length; j++) {
+      console.log(cards[j]);
+    }
+  });
+}
+
+
  var authenticationSuccess = function() {
-   Trello.get('lists/57550ffdda2131948a8d135d/cards', function(msg){
-     for (card in msg)
-     {
-       console.log(card.name);
-       console.log('------------------');
+   Trello.get('boards/JJVv7iOh/lists', function(lists){
+     for (var i=3; i<lists.length; i++) {
+        getCardsOfList(lists[i].id);
      }
    });
  };
@@ -26,6 +36,17 @@
   error: authenticationFailure
   });
 
+//3个月projects
+//lists/57550ffdda2131948a8d135d/cards
+
+
+
+//  for (var i=0; i < msg.length; i++)
+//  {
+//    if (msg[i].desc.indexOf('Releases') != -1) {
+//       console.log(msg[i]);
+//    }
+//  }
 
  </script>
 </head>

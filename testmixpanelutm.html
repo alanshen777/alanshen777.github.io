@@ -7,11 +7,24 @@ mixpanel.init("e4369a8a409f66ace6eef58d9255bf79");</script><!-- end Mixpanel -->
 function rnd(start, end){
     return Math.floor(Math.random() * (end - start) + start);
 }
+
+function setpeople()
+{
+  mixpanel.identify('222');
+  mixpanel.people.set({
+    "$email": "jsmith@example.com",    // only special properties need the $
+    "$created": "2011-03-16 16:53:54",
+    "$last_login": new Date(),         // properties can be dates...
+    "credits": 150,                    // ...or numbers
+    "gender": "Male"                    // feel free to define your own properties
+  });
+}
+
 </script>
 </head>
 <body>
 
-<input type="button" value="idenfity as new user" onclick="mixpanel.identify(rnd(1, 100));"></input>
+<input type="button" value="idenfity as new user" onclick="setpeople()"></input>
 <input type="button" value="浏览商品:数码" onclick="mixpanel.track('浏览商品', {'类型':'数码'});"></input>
 <input type="button" value="浏览商品:服装" onclick="mixpanel.track('浏览商品', {'类型':'服装'});"></input>
 <input type="button" value="加入购物车" onclick="mixpanel.track('加入购物车');"></input>
