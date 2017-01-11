@@ -8,8 +8,8 @@ option = {
     },
     grid: {
         bottom: '500px',
-        width:'800px',
-        height:'150px',
+        width:'700px',
+        height:'120px',
         containLabel: true,
         backgroundColor:'#fff'
     },
@@ -31,15 +31,16 @@ option = {
             '11-28 ~ 12-4',
             ],
             inverse:false,
+            boundaryGap : false,
             axisLabel:
             {
-                rotate:40,
+                rotate:0,
                 textStyle:{
-                    fontSize:11,
-                    color:'#777'
+                    fontSize:12,
+                    color:'#999',
+                    fontWeight:100
                 },
-                inside:false,
-                interval:0
+                inside:false
 
             },
             axisLine:
@@ -61,7 +62,8 @@ option = {
             axisLabel:
             {
                 textStyle:{
-                    color:'#777'
+                    color:'#999',
+                    fontWeight:100
                 }
             },
             axisTick:
@@ -86,10 +88,14 @@ option = {
             type:'line',
             stack:'222',
             symbol:'circle',
-            symbolSize:'5',
+            symbolSize:'6',
             showAllSymbol:true,
+            areaStyle: {
+                normal: {
+                    opacity:0.1
+                }
+            },
             name:'直接访问',
-            barWidth: '40px',
             data:[
                 7233,
                 6772,
@@ -108,7 +114,7 @@ option = {
             {
                 normal:
                 {
-                    width:1
+                    width:2
                 }
             },
             itemStyle:{
